@@ -1,0 +1,17 @@
+<h1><%= @store.name %></h1>
+<p><%= @store.address %></p>
+<h2>Ratings</h2>
+<% @ratings.each do |rating| %>
+  <p><%= rating.score %> - <%= rating.comment %></p>
+<% end %>
+<%= form_with model: [@store, Rating.new], local: true do |form| %>
+  <div>
+    <%= form.label :score %>
+    <%= form.number_field :score, min: 1, max: 5 %>
+  </div>
+  <div>
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
+  <%= form.submit "Submit Rating" %>
+<% end %>

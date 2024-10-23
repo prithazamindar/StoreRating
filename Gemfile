@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'rails', '~> 6.0.0'
+gem 'devise'
+gem 'pundit'
+gem 'bootstrap', '~> 5.1.0'
